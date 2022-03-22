@@ -26,6 +26,7 @@ const News = ({simplified})  => {
         if(cryptoNews !== undefined && cryptos === undefined){
             setCryptos(prevState => prevState =  cryptoNews.value);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[cryptoNews])
 
     // console.log("cryptoNews");

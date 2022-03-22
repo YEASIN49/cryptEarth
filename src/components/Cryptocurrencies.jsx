@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import millify from "millify";
 import { Link } from "react-router-dom";
-import { Card, Row, Col, Input, Typography } from "antd";
+import { Card, Row, Col, Typography } from "antd";
 
 
 import { useGetCryptosQuery } from "../services/cryptoAPI";
@@ -22,6 +22,7 @@ const Cryptocurrencies = ({simplified})  => {
         if(cryptoList !== undefined && cryptos === undefined){
             setCryptos(prevState => prevState =  cryptoList.data.coins);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[cryptoList])
 
     useEffect(()=>{
@@ -29,10 +30,11 @@ const Cryptocurrencies = ({simplified})  => {
             const filterSearchItem = cryptoList.data.coins.filter((coin) => coin.name.toLowerCase().includes(searchItem.toLowerCase()))
             setCryptos(prevState => prevState =  filterSearchItem);
         } 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[searchItem])
 
     if(isFetching) return "Loading...";
-    // console.log(cryptos)
+    // console.log(cryptos) 
     return(
         <>
             {
@@ -54,7 +56,7 @@ const Cryptocurrencies = ({simplified})  => {
                         <Link to={`/crypto/${index}`}>
                             <Card 
                                 title={`${currency.rank} - ${currency.name}`}
-                                extra={<img className="crypto-image" src={currency.iconUrl}/>}
+                                extra={<img className="crypto-image" src={currency.iconUrl} alt="card"/>}
                                 hoverable
                             >
                                 <p>Price : {millify(currency.price)}</p>
