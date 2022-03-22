@@ -5,10 +5,16 @@ import {Navbar, Homepage, Exchanges, Cryptocurrencies, CryptoDetails, News} from
 import "./styles/App.css"
 
 const App =() => {
+   
+
+
+    
+
     return (
         <div className="app">
             <div className="navbar">
                 <Navbar />
+                
             </div>
             <div className="main">
                 <Layout>
