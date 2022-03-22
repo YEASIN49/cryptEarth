@@ -7,8 +7,8 @@ import { Card, Row, Col, Input, Typography } from "antd";
 import { useGetCryptosQuery } from "../services/cryptoAPI";
 
 const Cryptocurrencies = ({simplified})  => {
-    console.log("simplified");
-    console.log(simplified);
+    // console.log("simplified");
+    // console.log(simplified);
     const {Title} = Typography;
     const count = simplified ? 10 : 80;
     const {data: cryptoList, isFetching } = useGetCryptosQuery(count); // data is renamed as crytoList for easier understanding
@@ -32,7 +32,7 @@ const Cryptocurrencies = ({simplified})  => {
     },[searchItem])
 
     if(isFetching) return "Loading...";
-    console.log(cryptos)
+    // console.log(cryptos)
     return(
         <>
             {
@@ -48,7 +48,7 @@ const Cryptocurrencies = ({simplified})  => {
             </div>
            
             <Row gutter={[12,12]} className="crypto-card-container">
-                {console.log(cryptos)}
+                {/* {console.log(cryptos)} */}
                 {cryptos ? cryptos.map( (currency, index) => (
                     <Col xs={24} sm={12} lg={6} className="crypto-card" key={`${index}`}>
                         <Link to={`/crypto/${index}`}>
@@ -66,7 +66,8 @@ const Cryptocurrencies = ({simplified})  => {
                     </Col>
                 ))
                 :
-                console.log("Entered once")
+                ""
+                // console.log("Entered once")
             }
             </Row>  
         </>

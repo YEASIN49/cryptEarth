@@ -18,7 +18,7 @@ const Homepage = ()  => {
     
     const globalData = data.data;
     // console.log("globalData");
-    console.log(globalData);
+    // console.log(globalData);
     
     return(
         <>

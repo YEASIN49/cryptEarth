@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsAPI";
-import millify from "millify";
-import { Card, Row, Col, Input, Typography, Avatar } from "antd";
-import { Link } from "react-router-dom";
+import { Card, Row, Col, Typography, Avatar } from "antd";
 import moment from "moment";
 // import Title from "antd/lib/skeleton/Title";
 // import { Typography } from "antd";
@@ -19,7 +17,6 @@ const News = ({simplified})  => {
     const defaultImage = "https://www.bing.com/th?id=OVFT.9Mx6OTHFZdPHlCfkAF2f9C&pid=News";
 
     const [cryptos, setCryptos] = useState();
-    const [searchItem, setSearchItem] = useState("");
     const {data: cryptoNews, isFetching} = useGetCryptoNewsQuery({newsCategory: cat ,count: count});
 
     // console.log("cryptoNews");
@@ -31,9 +28,9 @@ const News = ({simplified})  => {
         }
     },[cryptoNews])
 
-    console.log("cryptoNews");
-    console.log(cryptos);
-    console.log(cryptos);
+    // console.log("cryptoNews");
+    // console.log(cryptos);
+    // console.log(cryptos);
 
     if(isFetching) return "Loading...";
 
@@ -71,7 +68,8 @@ const News = ({simplified})  => {
                 </Col>
             ))
             :
-            console.log("Entered once")
+            ""
+            // console.log("Entered once")
         }
         </Row>  
     </>

@@ -52,7 +52,8 @@ a:hover{
     width: 100%;
 }
 .logo{
-    margin:0 0 0 15px;
+    margin-bottom: 5px !important;
+    padding-left: 8px;
 }
 .logo a{
    color: white;
@@ -382,4 +383,17 @@ padding-right: 5px;
     flex-direction: column;
     padding: 20px;
     align-items: center;
+}
+
+.construction-container{
+    display: flex;
+    height: 100vh;
+    align-items:center;
+    justify-content: center;
+}
+.construction-image{
+    height: 100%;
+    width:  100%;
+    max-height: 360px;
+    max-width: 420px;
 }
