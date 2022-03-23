@@ -119,7 +119,9 @@ a:hover{
     }
   
     .menu-control-container{
-        display: block !important;
+        display: flex !important;
+        height: 35px !important;
+        align-items: center;
     }
 
     .ant-menu{
